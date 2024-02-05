@@ -1,6 +1,6 @@
 steps:
 # Build the container image
-- name: 'docker.pkg.dev/cloud-builders/docker
+- name: 'docker.pkg.dev/cloud-builders/docker'
   args: ['build', '-t', 'docker.pkg.dev/$PROJECT_ID/${_SERVICE_NAME}:${SHORT_SHA}', '.']
   id: Building the container image
 # Push the container image to Container Registry
