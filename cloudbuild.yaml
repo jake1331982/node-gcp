@@ -1,10 +1,10 @@
 steps:
 # Build the container image
-- name: 'docker.pkg.dev/cloud-builders/docker'
-  args: ['build', '-t', 'docker.pkg.dev/$PROJECT_ID/${_SERVICE_NAME}:${SHORT_SHA}', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/$PROJECT_ID/${_SERVICE_NAME}:${SHORT_SHA}', '.']
   id: Building the container image
 # Push the container image to Container Registry
-- name: 'docker.pkg.dev/cloud-builders/docker'
+- name: 'gcr.io/cloud-builders/docker'
   args: ['push', ' us-central1-docker.pkg.dev/$PROJECT_ID/demorepo/${_SERVICE_NAME}:${SHORT_SHA}']
   id: Pushing the image to registry
 # Deploy container image to Cloud Run
